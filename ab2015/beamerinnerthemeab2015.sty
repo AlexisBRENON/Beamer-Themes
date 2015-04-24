@@ -1,0 +1,115 @@
+\mode<presentation>
+
+% Title page
+
+\defbeamertemplate*{title page}{alexisbrenon}[1][]
+{
+    \vfill
+    \begin{centering}
+        {\usebeamerfont{title}\inserttitle\par}%
+        \ifx\insertsubtitle
+            \@empty
+        \else
+            \vskip0.25em
+            {\usebeamerfont{subtitle}\insertsubtitle\par}%
+        \fi%
+        \vskip3em\par
+        {\usebeamerfont{author}\insertauthor\par}
+        {\usebeamerfont{institute}\insertinstitute\par}
+        {\usebeamerfont{date}\insertdate\par}
+        {\inserttitlegraphic}
+    \end{centering}
+    \vfill
+}
+
+\newcommand{\openingpage}{
+    \begingroup
+        \setbeamercolor{background canvas}{parent=palette primary}
+        \usebeamercolor{palette primary}
+        \frame[plain]{\titlepage}
+    \endgroup
+}
+
+% Closing page
+
+\newcommand{\twitter}[1]{
+    \def\twittername{#1}
+}
+\newcommand{\website}[1]{
+    \def\websiteurl{#1}
+}
+\newcommand{\twittericon}[1]{
+    \def\twittericonchar{#1}
+}
+\newcommand{\websiteicon}[1]{
+    \def\websiteiconchar{#1}
+}
+\newcommand{\inserttwittericon}{
+    \ifx\twittericonchar\undefined
+        
+    \else
+        \twittericonchar
+    \fi
+}
+\newcommand{\insertwebsiteicon}{
+    \ifx\websiteiconchar\undefined
+        
+    \else
+        \websiteiconchar
+    \fi
+}
+
+\newcommand{\closingpage}[1]{
+    \begingroup
+        \setbeamercolor{background canvas}{parent=palette primary}
+        \usebeamercolor{palette primary}
+        \begin{frame}[plain]
+            \color{fg}
+            \vfill
+            \begin{beamercolorbox}[center]{closing page title}
+                \usebeamerfont{title}\Huge{#1}
+            \end{beamercolorbox}
+            \vskip3em
+            \begin{beamercolorbox}[center]{closing page}
+                \ifx\twittername\undefined
+                \else
+                    {\usebeamerfont{iconic}\lower0.1em\hbox{\inserttwittericon}} \hspace{0.5em}\twittername\par%
+                    \vspace{0.75em}
+                    \leavevmode
+                \fi
+                \ifx\websiteurl\undefined
+                \else
+                    {\usebeamerfont{iconic}\lower0.15em\hbox{\insertwebsiteicon}} \hspace{0.5em}\websiteurl\par%
+                \fi
+                \vfill
+            \end{beamercolorbox}
+        \end{frame}
+    \endgroup
+}
+
+
+% Part page: default
+
+\renewcommand{\partpage}{
+    \begingroup
+        \setbeamercolor{background canvas}{parent=palette primary}
+        \usebeamercolor{palette primary}
+        \begin{frame}[plain]
+            \color{fg}
+            \vfill
+            \begin{beamercolorbox}[center]{part title}
+                \usebeamerfont{part title}\insertpart
+            \end{beamercolorbox}
+            \vfill
+        \end{frame}
+    \endgroup
+}
+
+% Itemize items
+
+\defbeamertemplate*{itemize item}{alexisbrenon}{\tiny\raise0.3em\hbox{$∙$}}
+\defbeamertemplate*{itemize subitem}{alexisbrenon}{\tiny\raise0.3em\hbox{$∙$}}
+\defbeamertemplate*{itemize subsubitem}{alexisbrenon}{\tiny\raise0.3em\hbox{$∙$}}
+
+\mode
+<all>

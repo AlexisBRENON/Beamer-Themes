@@ -1,0 +1,44 @@
+\mode<presentation>
+
+% Remove navigation symbols
+\usenavigationsymbolstemplate{}
+
+% Footline
+
+\defbeamertemplate*{footline}{alexisbrenon}
+{
+    \begin{beamercolorbox}{normal text}
+        \includegraphics[width=160mm]{./imgab2015/light_shadow.png}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=0.75em]{palette primary}
+        \hfill\usebeamerfont{page number in head/foot}\insertframenumber
+    \end{beamercolorbox}
+}
+
+% Frame title: default
+
+\defbeamertemplate*{frametitle}{alexisbrenon}
+{
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \vspace{-1mm}
+  \begin{beamercolorbox}[sep=0.3cm,wd=\the\@tempdima]{frametitle}
+    \usebeamerfont{frametitle}%
+    \insertframetitle
+    {%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\hspace{0.975em}\insertframesubtitle}%
+      \fi
+    }%
+    \par
+  \end{beamercolorbox}%
+  \vspace{-6mm}
+  \begin{beamercolorbox}[sep=0mm,wd=\the\@tempdima]{normal text}
+      \includegraphics[width=160mm]{./imgab2015/hard_shadow.png}
+  \end{beamercolorbox}
+}
+
+\mode
+<all>

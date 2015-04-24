@@ -1,0 +1,46 @@
+\mode<presentation>
+
+% Use the dark monokai theme
+\definecolor{abVeryDark}{RGB}{39,40,34} % #272822
+\definecolor{abDark}{RGB}{62,61,50} % #3E3D32
+\definecolor{abVeryLight}{RGB}{248, 248, 242} % #F8F8F2
+\definecolor{abLight}{RGB}{230, 219, 116} % #E6DB74
+\definecolor{abAccent}{RGB}{121, 171, 255} % #79ABFF
+\definecolor{abAlert}{HTML}{D25252}
+
+\setbeamercolor{normal text}{bg=abVeryLight, fg=abVeryDark}
+\setbeamercolor{alerted text}{fg=abAlert}
+\setbeamercolor{example text}{fg=abAccent}
+
+\setbeamercolor{structure}{fg=abVeryLight, bg=abVeryDark}
+
+\setbeamercolor{palette primary}{fg=abVeryLight, bg=abVeryDark}
+\setbeamercolor{palette secondary}{bg=abVeryLight, fg=abVeryDark}
+\setbeamercolor{palette tertiary}{use=palette secondary, bg=palette secondary.bg, fg=Accent}
+\setbeamercolor{palette quaternary}{use=palette secondary, bg=palette secondary.bg, fg=Dark}
+
+\setbeamercolor{palette sidebar primary}{parent=palette primary}
+\setbeamercolor{palette sidebar secondary}{parent=palette secondary}
+\setbeamercolor{palette sidebar tertiary}{parent=palette tertiary}
+\setbeamercolor{palette sidebar quaternary}{parent=palette quaternary}
+
+\setbeamercolor{closing page}{parent=palette primary}
+\setbeamercolor{closing page title}{parent=closing page}
+
+\setbeamercolor{block title alerted}{use=alerted text,fg=alerted text.bg,bg=alerted text.fg}
+\setbeamercolor{block title example}{use=example text,fg=example text.bg,bg=example text.fg}
+
+\setbeamercolor{item}{parent=palette secondary}
+
+\newcommand{\invertcontrast}{
+    \colorlet{abTemp}{abVeryDark}
+    \colorlet{abVeryDark}{abVeryLight}
+    \colorlet{abVeryLight}{abTemp}
+    
+    \colorlet{abTemp}{abDark}
+    \colorlet{abDark}{abLight}
+    \colorlet{abLight}{abTemp}
+}
+
+\mode
+<all>

@@ -1,0 +1,31 @@
+\RequirePackage{fontspec}
+
+\mode<presentation>
+
+\setmainfont{DejaVu Sans Condensed}
+\setmonofont{Inconsolata}
+\newfontfamily\TitleFont{Poetsen One}
+\newfontfamily\IconicFont{FontAwesome}
+
+\newcommand{\settitlefont}[1]{
+    \newfontfamily\TitleFont{#1}
+}
+\newcommand{\seticonicfont}[1]{
+    \newfontfamily\IconicFont{#1}
+}
+
+\setbeamerfont{iconic}{size=\LARGE, family=\IconicFont}
+\setbeamerfont{page number in head/foot}{size=\tiny}
+
+\setbeamerfont{title}{family=\TitleFont}
+\setbeamerfont{closing page title}{parent=title, size=\Large}
+
+\setbeamerfont{subtitle}{family=\normalfont}
+
+\setbeamerfont{frametitle}{parent=title}
+\setbeamerfont{framesubtitle}{parent=subtitle,size=\footnotesize}
+
+\setbeamerfont{description item}{series=\bfseries}
+
+\mode
+<all>
