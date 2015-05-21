@@ -36,12 +36,16 @@ Moreover, you can use the following command to invert `abVery(Light|Dark)` and `
 
 ### Fonts
 
-|Command|Argument|Description|
-|-------|--------|-----------|
-|`\setmainfont`| _&lt;font name&gt;_ | Change the font used in general (default: DejaVu Sans Condensed)|
-|`\setmonofont`| _&lt;font name&gt;_ | Change the font used for monospace (default: Inconsolata)|
-|`\settitlefont`| _&lt;font name&gt;_ | Change the font used for titles (frame and first page) (default: [Poetsen One](http://www.dafont.com/fr/poetsen-one.font))|
-|`\seticonicfont`| _&lt;font name&gt;_ | Change the font used for icons (default: [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/)) [_See below for more_](#twitterandwebsite)|
+ab2015 use four different fonts in rendering. To compile properly, the used fonts have to be present on you computer. If one of the default fonts is not present or if you want to use another one, you have to define a command with the new font name :
+
+|Command|Description|
+|-------|-----------|
+|`\MainFontName`| Name of the font used in general (default: DejaVu Sans Condensed)|
+|`\TitleFontName`| Name of the font used for titles (frame and first page) (default: [Poetsen One](http://www.dafont.com/fr/poetsen-one.font))|
+|`\MonoFontName`| Name of the font used for monospace (default: Inconsolata)|
+|`\IconicFontName`| Name of the font used for icons (default: [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/)) [_See below for more_](#twitterandwebsite)|
+
+You have to define the command before loading the theme (`\usetheme{ab2015}`) to avoid warnings during compilation.
 
 ### Pages
 
