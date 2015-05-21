@@ -1,32 +1,27 @@
-THEME = ab2015
-THEMEFILES = $(wildcard $(THEME)/*)
-BUILDFOLDER = build
-TEXFILE = $(wildcard *.tex)
-PDF = $(patsubst %.tex,%.pdf,$(TEXFILE))
+THEME_NAME = ab2015
+THEME_FILES = $(wildcard $(THEME_NAME)/*)
 
-TEXC := xelatex
-TEXC_OPTS += -shell-escape
+TEX_FILE = BeamerTest.tex
+#ASSETS_FOLDER = assets/
+
+BUILD_FOLDER = build/
+PDF_FILE = $(patsubst %.tex,%.pdf,$(TEX_FILE))
+
+LATEX = lualatex
+LATEX_OPTIONS = -shell-escape
 
 .PHONY: clean
 
-all: $(PDF)
+all: $(PDF_FILE)
 
-$(PDF): $(TEXFILE) $(THEMEFILES)
-	$(MAKE) _prepare
-	cd ./$(BUILDFOLDER)/ && \
-	$(TEXC) $(TEXC_OPTS) $(TEXFILE) ; \
-	cd -
-	$(MAKE) _sanitize
-
-_prepare:
-	@mkdir -p $(BUILDFOLDER)
-	@cp -r $(THEMEFILES) $(BUILDFOLDER)
-	@cp $(TEXFILE) $(BUILDFOLDER)
-  
-_sanitize:
-	@mv $(BUILDFOLDER)/$(PDF) ./$(PDF)
+$(PDF_FILE): $(BUILD_FOLDER)
+	latexmk -cd -pdf -pdflatex="$(LATEX) $(LATEX_OPTIONS)" $(BUILD_FOLDER)/$(TEX_FILE)
+	
+$(BUILD_FOLDER): $(TEX_FILE) $(ASSETS_FOLDER) $(THEME_FILES)
+	@mkdir -p $(BUILD_FOLDER)
+	@cp -rf $? $(BUILD_FOLDER)
 
 clean:
-	@rm -f $(PDF)
-	@rm -fr $(BUILDFOLDER)
+	@rm -f $(PDF_FILE)
+	@rm -fr $(BUILD_FOLDER)
 
