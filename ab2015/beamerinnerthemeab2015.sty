@@ -1,5 +1,7 @@
 \mode<presentation>
 
+\usepackage{hyperref}
+
 % Title page
 
 \defbeamertemplate*{title page}{alexisbrenon}[1][]
@@ -75,13 +77,18 @@
             \begin{beamercolorbox}[center]{closing page}
                 \ifx\twittername\undefined
                 \else
-                    {\usebeamerfont{iconic}\lower0.1em\hbox{\inserttwittericon}} \hspace{0.5em}\twittername\par%
+                   \href{https://twitter.com/\twittername}{
+                       {\usebeamerfont{iconic}\lower0.1em\hbox{\inserttwittericon}} \hspace{0.5em}@\twittername
+                   }
+
                     \vspace{0.75em}
                     \leavevmode
                 \fi
                 \ifx\websiteurl\undefined
                 \else
-                    {\usebeamerfont{iconic}\lower0.15em\hbox{\insertwebsiteicon}} \hspace{0.5em}\websiteurl\par%
+                \href{http://\websiteurl}{
+                    {\usebeamerfont{iconic}\lower0.15em\hbox{\insertwebsiteicon}} \hspace{0.5em}\websiteurl
+                }
                 \fi
                 \vfill
             \end{beamercolorbox}

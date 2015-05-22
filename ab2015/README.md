@@ -57,14 +57,15 @@ You have to define the command before loading the theme (`\usetheme{ab2015}`) to
 
 ### <a name="twitterandwebsite"></a>Twitter and Website
 
-The closing page can display your Twitter account name or URL and your website URL, both prepended with a beautiful icon. To define those variable use :
+The closing page can display your Twitter account name and your website URL, both prepended with a beautiful icon. If you share the resulting PDF, the readers will be able to click on these lines to be automatically linked to your twitter account (`https://twitter.com/twittername`) or your website (`http://websiteurl`). To define those variable use :
 
 |Command|Argument|Description|
 |-------|--------|-----------|
-|`\twitter`| _&lt;text&gt;_ | Will display _text_ after the twitter icon (no post-processing to prepend the `@` or whatever)|
+|`\twitter`| _&lt;text&gt;_ | Will display _@text_ after the twitter icon (the `@` is automatically prepended)|
 |`\website`| _&lt;text&gt;_ | Will display _text_ after the website icon|
 
-By default, to display icons, the theme uses the Font Awesome font with characters : `U+F099` for twitter and `U+F0AC` for website. Neverthelesse, as codepoint can change or you can use different font, you can use the following command to change the icons :
+
+By default, to display icons, the theme uses the Font Awesome font with characters : `U+F099` for twitter and `U+F0AC` for website. Nevertheless, as codepoint can change or you can use different font, you can use the following command to change the icons :
 
 |Command|Argument|Description|
 |-------|--------|-----------|
