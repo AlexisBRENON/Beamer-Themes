@@ -63,3 +63,8 @@ By default, to display icons, the theme uses the Font Awesome font with characte
 |`\websiteicon`| _&lt;text&gt;_ | Will display _text_ using the iconic font the website icon|
 
 I think that's all ! Have a nice day ! :)
+
+## Todo / Changelog :
+* [x] Include some hyperlinks on closing page (2015-05-22)
+* [x] Allow to display a progress bar (2015-05-22)
+* [x] Change color scheme : monokai --> polysics (2015-05-22)

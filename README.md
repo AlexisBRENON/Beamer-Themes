@@ -11,5 +11,3 @@ This repo will contains the beamer's theme that I will build. Maybe there will b
 
 **Feel free to ask for some features !**
 
-## TODO :
-* [ ] Include some hyperlinks on closing page
