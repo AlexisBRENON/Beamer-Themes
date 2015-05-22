@@ -13,26 +13,14 @@ The ab2015 theme let you tune it through some variables and command.
 
 ### Colors
 
-ab2015 theme is based on 6 colors :
-* `abVeryDark`
-* `abDark`
-* `abLight`
-* `abVeryLight`
-* `abAccent`
-* `abAlert`
+ab2015 theme is based on 3 colors.
+These three colors can be defined before loading the theme, using the HTML notation.
 
-All these six colors can be redefined using the classic color syntax :
-
-    \definecolor{abVeryLight}{RGB}{248, 248, 242}
-    \definecolor{abAlert}{HTML}{D25252}
-
-As you guess, `abVeryDark` and `abDark` are intended to represent dark colors (e.g. black and grey80) and `abLight` and `abVeryLight` light colors (e.g. white and yellow). In addition, `abAccent` is used for `example` boxes and `abAlert` for `alerted` text and boxes.
-
-Moreover, you can use the following command to invert `abVery(Light|Dark)` and `ab(Light|Dark)`.
-
-|Command|Argument|Description|
-|-------|--------|-----------|
-|`\invertcontrast`|none|Switch main foreground and background colors|
+|Command|Description|
+|-------|-----------|
+|`\DarkColor`| Main color of font (default: 383132)|
+|`\LightColor`| Main color of background (default: F0E3B8)|
+|`\AccentColor`| Color used for excerpt (default: 3E8B91)|
 
 ### Fonts
 
