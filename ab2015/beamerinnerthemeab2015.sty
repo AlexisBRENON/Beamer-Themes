@@ -1,6 +1,7 @@
 \mode<presentation>
 
 \usepackage{hyperref}
+\usepackage{calc}
 
 % Title page
 
@@ -97,7 +98,22 @@
 }
 
 
-% Part page: default
+% Part page
+\makeatletter
+\newcommand{\DisplayProgressBar}{
+    \newcommand{\@display@progress@bar}{}
+}
+
+\newcounter{progress@progressbar}
+\newcommand{\@insert@progress@bar}{
+    \setcounter{progress@progressbar}{(\insertframenumber * 14) / \inserttotalframenumber}
+    {
+        \begin{tikzpicture}
+          \draw[fg,line width=0.2em] (0, 0) -- (\theprogress@progressbar, 0);
+          \draw[color=fg!25!bg,line width=0.2em] (\theprogress@progressbar, 0) -- (14, 0);
+        \end{tikzpicture}
+    }
+}
 
 \renewcommand{\partpage}{
     \begingroup
@@ -109,10 +125,21 @@
             \begin{beamercolorbox}[center]{part title}
                 \usebeamerfont{part title}\insertpart
             \end{beamercolorbox}
+            
+            \ifx \@display@progress@bar \undefined
+            \else
+            {
+                \begin{center}
+                    \@insert@progress@bar
+                \end{center}
+            }
+            \fi
             \vfill
         \end{frame}
     \endgroup
 }
+
+\makeatother
 
 % Itemize items
 

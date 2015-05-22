@@ -55,6 +55,8 @@ You have to define the command before loading the theme (`\usetheme{ab2015}`) to
 |`\partpage`|none| Build a part page, a simple contrasted page with part title|
 |`\closingpage`| _&lt;text&gt;_ | Build a closing page, with _&lt;text&gt;_ in the center. Generally used for "Questions ?" or "Thanks !" page. If defined, it also display twitter and website variables |
 
+Part page can contains a progress bar to show to the audience where you are in your presentation. To active it, just call the `\DisplayProgressBar` command at the beginning of your document.
+
 ### <a name="twitterandwebsite"></a>Twitter and Website
 
 The closing page can display your Twitter account name and your website URL, both prepended with a beautiful icon. If you share the resulting PDF, the readers will be able to click on these lines to be automatically linked to your twitter account (`https://twitter.com/twittername`) or your website (`http://websiteurl`). To define those variable use :
